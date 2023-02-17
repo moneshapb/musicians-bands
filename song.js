@@ -1,12 +1,12 @@
-const {Sequelize, sequelize} = require('./db');
+const { DataTypes, QueryInterface } = require("sequelize");
+const { Sequelize, sequelize } = require("./db");
 
-
-let Song = sequelize.define('song', {
-    title: Sequelize.STRING,
-    year: Sequelize.NUMBER,
-
+// TODO - define the Song model
+let Song = sequelize.define("Song", {
+  title: DataTypes.STRING,
+  year: DataTypes.NUMBER,
 });
 
 module.exports = {
-    Song
+  Song,
 };

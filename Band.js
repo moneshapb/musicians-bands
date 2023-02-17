@@ -1,14 +1,13 @@
-const {Sequelize, sequelize} = require('./db');
+const { DataTypes, QueryInterface } = require("sequelize");
+const { Sequelize, sequelize } = require("./db");
 
 // TODO - define the Band model
-
-let Band = sequelize.define('band', {
-    "name": Sequelize.STRING,
-    "genre": Sequelize.STRING,
-    "showCount": Sequelize.INTEGER,
+let Band = sequelize.define("Band", {
+  name: DataTypes.STRING,
+  genre: DataTypes.STRING,
+  showCount: DataTypes.NUMBER,
 });
 
 module.exports = {
-    Band
+  Band,
 };
-

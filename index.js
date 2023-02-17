@@ -1,22 +1,19 @@
-const {Band} = require('./Band')
-const {Musician} = require('./Musician')
-const {Song} = require('./Song')
-const {Sequelize, sequelize} = require('./db');
-const {NUMBER, belongsToMany} = require('sequelize');
+const { NUMBER, BelongsToMany } = require("sequelize");
+const { Band } = require("./Band");
+const { sequelize } = require("./db");
+const { Musician } = require("./Musician");
+const { Song } = require("./Song");
 
-
-Band.hasMany(Musician);
 Musician.belongsTo(Band);
+Band.hasMany(Musician);
 
-Band.belongsToMany(Song, {through: 'band_song'});
-Song.belongsToMany(Band, {through: 'band_song'});
-
-
-
+Band.belongsToMany(Song, { through: "band_song" });
+Song.belongsToMany(Band, { through: "band_song" });
 
 
 
 module.exports = {
     Band,
-    Musician
-};
+    Musician,
+    Song
+}
